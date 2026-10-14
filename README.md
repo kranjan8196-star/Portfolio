@@ -4,8 +4,7 @@ A responsive portfolio made with React + Vite, with the supplied portrait includ
 
 ## Public portfolio
 
-The site is published with GitHub Pages at https://kranjan8196-star.github.io/Portfolio/.
-Pushes to `main` automatically build and deploy the site.
+The site will be available at https://kranjan8196-star.github.io/Portfolio/ after GitHub Pages is enabled for the repository with GitHub Actions as its build source. Once enabled, pushes to `main` automatically build and deploy the site.
 
 ## Easiest way to open on Windows
 
