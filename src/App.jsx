@@ -1,0 +1,43 @@
+import React, { useState } from 'react';
+import { ArrowDown, ArrowUpRight, Bot, BriefcaseBusiness, CheckCircle2, Code2, GraduationCap, Instagram, Mail, Menu, Megaphone, Monitor, Palette, Phone, Send, Share2, Sparkles, Target, Workflow, ChartNoAxesCombined, X } from 'lucide-react';
+
+const profile = { name: 'Ranjan Kumar', title: 'AI & Digital Marketing Creator', email: 'kranjan8196@gmail.com', phone: '+918294171400', whatsapp: '918294171400', instagram: 'https://www.instagram.com/ranjan_kumar291/reels/', photo: `${import.meta.env.BASE_URL}ranjan-kumar-portrait.png` };
+const skills = [
+  [Megaphone, 'Digital Marketing', 'Digital marketing fundamentals and AI-assisted workflows.'],
+  [Share2, 'Social Media Marketing', 'Content planning, page management and audience engagement.'],
+  [Target, 'Meta Ads', 'Facebook and Instagram campaign setup and audience targeting.'],
+  [Palette, 'Canva Design', 'Social posts, banners, presentations and visual creatives.'],
+  [Bot, 'AI Tools', 'ChatGPT and modern AI tools for content and ideation.'],
+  [ChartNoAxesCombined, 'MS Excel & Data', 'Data entry, reports, formulas, VLOOKUP and Pivot Tables.'],
+  [Monitor, 'Office Automation', 'MS Word, PowerPoint, email and computer operations.'],
+  [Workflow, 'Tally Prime', 'Computerized accounting as part of ADCA training.'],
+  [Code2, 'SEO & Web Concepts', 'Website optimization concepts and responsive landing pages.'],
+];
+const education = [
+  ['2026 — Present', 'Bachelor of Arts (B.A.) — Semester 1', 'S. U. College, Hilsa (Nalanda)'],
+  ['Completed', '12th — Higher Secondary', 'Utkramit Uchcha Madhyamik Vidyalay, Rasalpur Fatuha (Patna)', 'Bihar School Examination Board'],
+  ['Completed', '10th — Matriculation', 'Rajkiyakrit High School, Tope (Patna)', 'Bihar School Examination Board'],
+  ['1-Year Diploma', 'Diploma in Computer Application (ADCA)', 'Institution and completion date not provided'],
+];
+const projects = [
+  [Share2, 'Facebook & Instagram Page Management', 'SOCIAL MEDIA', 'Page setup, organic growth activities, post and Reel scheduling, and audience engagement.'],
+  [Target, 'Meta Ads Campaign Setup', 'PAID CAMPAIGNS', 'Audience targeting, paid campaign workflows and lead-generation form setup.'],
+  [Palette, 'Canva Designing', 'CREATIVE DESIGN', 'Social media posts, banners, clothing presentations and visual creatives.'],
+  [Code2, 'Website & Landing Page Design', 'WEB DESIGN', 'Responsive, user-friendly website and landing-page concepts using AI tools.'],
+];
+function Heading({ eyebrow, title, accent, description }) { return <div className="section-heading"><div className="eyebrow"><i />{eyebrow}</div><h2>{title} <span className="gradient">{accent}</span></h2>{description && <p>{description}</p>}</div>; }
+export default function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const links = ['About', 'Skills', 'Education', 'Projects', 'Contact'];
+  return <div className="site-shell">
+    <header className="header"><a className="brand" href="#home"><span className="brand-mark">RK</span>Ranjan Kumar</a><button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">{menuOpen ? <X /> : <Menu />}</button><nav className={menuOpen ? 'nav nav-open' : 'nav'}>{links.map(x => <a key={x} href={'#'+x.toLowerCase()} onClick={() => setMenuOpen(false)}>{x}</a>)}</nav><a className="nav-cta" href={`mailto:${profile.email}`}>Let’s Talk <ArrowUpRight size={16}/></a></header>
+    <main>
+      <section className="hero wrap" id="home"><div className="hero-copy"><div className="pill"><span/> OPEN TO JOBS & INTERNSHIPS</div><p className="hello">Hello, I’m</p><h1>Ranjan <span className="gradient">Kumar.</span></h1><h2>{profile.title}</h2><p className="lead">A digital marketer and ADCA learner exploring the intersection of AI, creative content, social media and digital growth.</p><div className="actions"><a className="button primary" href={`mailto:${profile.email}`}>Get in touch <ArrowUpRight size={17}/></a><a className="button secondary" href="#projects">Explore focus areas <ArrowDown size={16}/></a></div><div className="hero-links"><a href={`mailto:${profile.email}`}><Mail size={15}/>{profile.email}</a><a href={profile.instagram} target="_blank" rel="noreferrer"><Instagram size={15}/>Instagram profile</a></div></div><div className="hero-visual"><div className="glow"/><div className="portrait"><img src={profile.photo} alt="Portrait of Ranjan Kumar"/><div className="photo-caption"><span className="status-dot"/><div><b>Learn. Create. Grow.</b><small>AI + Digital Marketing</small></div></div></div><div className="float-note"><Sparkles size={17}/> Curious mind, creative work</div></div></section>
+      <section className="wrap section about" id="about"><div><Heading eyebrow="A LITTLE ABOUT ME" title="Creative mindset." accent="Technical foundation."/><p className="copy">I have completed a <strong>1-Year Diploma in Computer Application (ADCA)</strong> and am pursuing a Bachelor of Arts (B.A.), Semester 1. I am a Digital Marketer focused on learning new technologies, building digital presence and creating value through AI and digital marketing.</p><div className="facts"><div><GraduationCap/><span><b>ADCA</b><small>1-Year Diploma</small></span></div><div><BriefcaseBusiness/><span><b>Fresher</b><small>Job / Internship seeker</small></span></div></div></div><aside className="quote"><span>“</span><p>I believe in continuous learning, creative thinking and using technology to create meaningful impact.</p><b>Ranjan Kumar</b><small>MY APPROACH</small></aside></section>
+      <section className="wrap section" id="skills"><Heading eyebrow="MY TOOLKIT" title="Skills &" accent="capabilities" description="A growing toolkit across marketing, creative production and computer applications."/><div className="skill-grid">{skills.map(([Icon, title, description])=><article className="card" key={title}><div className="icon"><Icon size={22}/></div><h3>{title}</h3><p>{description}</p></article>)}</div></section>
+      <section className="wrap section" id="education"><Heading eyebrow="MY LEARNING JOURNEY" title="Education &" accent="training"/><div className="education-grid">{education.map(([period,title,institution,board])=><article className="card edu" key={title}><div className="icon"><GraduationCap size={22}/></div><div><small className="period">{period}</small><h3>{title}</h3><p>{institution}</p>{board && <small className="board">{board}</small>}</div></article>)}</div></section>
+      <section className="wrap section" id="projects"><Heading eyebrow="PRACTICAL FOCUS" title="Selected" accent="work areas" description="These are the practical areas you described, presented as focus areas rather than verified client case studies."/><div className="project-grid">{projects.map(([Icon,title,category,description],i)=><article className="card project" key={title}><div className="project-top"><div className="icon"><Icon size={22}/></div><span>0{i+1}</span></div><small className="period">{category}</small><h3>{title}</h3><p>{description}</p><div className="status"><CheckCircle2 size={14}/> Practical focus area</div></article>)}</div></section>
+      <section className="wrap section" id="contact"><div className="contact-panel"><div><div className="eyebrow"><i/> LET’S CONNECT</div><h2>Ready for the next <span className="gradient">opportunity?</span></h2><p className="copy">I’m looking for entry-level job and internship opportunities where I can apply my current skills, learn from a team and keep growing.</p><a className="button primary" href={`mailto:${profile.email}`}>Contact me <Send size={16}/></a></div><div className="contact-list"><a href={`mailto:${profile.email}`}><span><Mail/></span><div><small>Email</small><b>{profile.email}</b></div><ArrowUpRight/></a><a href={profile.instagram} target="_blank" rel="noreferrer"><span><Instagram/></span><div><small>Instagram</small><b>@ranjan_kumar291</b></div><ArrowUpRight/></a><a href={`https://wa.me/${profile.whatsapp}`} target="_blank" rel="noreferrer"><span><Phone/></span><div><small>WhatsApp</small><b>{profile.phone}</b></div><ArrowUpRight/></a></div></div></section>
+    </main><footer className="wrap footer"><a className="brand" href="#home"><span className="brand-mark">RK</span>Ranjan Kumar</a><p>AI &amp; Digital Marketing Creator</p><a href="#home">Back to top ↑</a><small>© {new Date().getFullYear()} Ranjan Kumar. All rights reserved.</small></footer>
+  </div>;
+}
