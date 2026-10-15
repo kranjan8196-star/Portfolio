@@ -3,7 +3,7 @@ import { ArrowDown, ArrowUpRight, Bot, BriefcaseBusiness, CheckCircle2, Code2, F
 
 const profile = { name: 'Ranjan Kumar', title: 'AI & Digital Marketing Creator', email: 'kranjan8196@gmail.com', phone: '+918294171400', whatsapp: '918294171400', location: 'Sonaru Mor, Fatuha, Patna', facebook: 'https://www.facebook.com/profile.php?id=61592488077243', instagram: 'https://www.instagram.com/ranjan_kumar291/', linkedin: 'https://www.linkedin.com/in/ranjan-kumar-a86a30426/', youtube: 'https://www.youtube.com/channel/UCvPH5rLCVDtwlJQ-GfC4iUA', photo: `${import.meta.env.BASE_URL}ranjan-kumar-portrait.png` };
 const skills = [
-  [Megaphone, 'Digital Marketing', 'Digital marketing fundamentals and AI-assisted workflows.'],
+  [Megaphone, 'AI + Digital Marketing', 'AI-assisted marketing workflows, creative strategy and digital growth fundamentals.'],
   [Share2, 'Social Media Marketing', 'Content planning, page management and audience engagement.'],
   [Target, 'Meta Ads', 'Facebook and Instagram campaign setup and audience targeting.'],
   [Palette, 'Canva Design', 'Social posts, banners, presentations and visual creatives.'],
