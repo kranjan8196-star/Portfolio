@@ -689,3 +689,24 @@ a {
     transition-duration: .01ms !important;
   }
 }
+
+#root .brand-mark {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  place-items: center;
+  padding: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .02em;
+}
+
+@media (max-width: 480px) {
+  #root .brand-mark {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+  }
+}
